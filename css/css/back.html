@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Dashboard Template</title>
+    <link rel="stylesheet" href="back.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <a href="#"><i class="fas  fa-square"></i><span>Logo Name</span></a>
+      </div>
+      <div class="right_area">
+        <ul class="top_list">
+          <li class="top_listitem">
+            <i class="far fa-2x fa-bell"></i>
+          </li>
+          <li class="top_listitem">
+            <div class="dropdown">
+              <button class="dropbtn"><i class="far fa-2x fa-user"></i></button>
+              <div class="dropdown-content">
+                <button>Account</button>
+                <button data-modal-target="#signout_modal" >Sign out</button>
+                <div class="signout_modal" id="signout_modal">
+                  <div class="signout_close">
+                    <button data-close-button class="signout_X"> 
+                      &times;
+                    </button>
+                  </div>
+                  <div class="signout_body">
+                    <h4>Are you sure you want to logout?</h4>
+                    <button class="signout_yes">Yes</button>
+                    <button class="signout_no">No</button>
+                  </div>
+                </div>
+                <div id="signout_overlay"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="#"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fas fa-tasks"></i><span>Manage Website</span></a>
+        <a href="#"><i class="fas fa-newspaper"></i><span>Newsletter</span></a>
+        <a href="#"><i class="fas fa-users"></i><span>User Management</span></a>
+        <a href="#"><i class="far fa-newspaper"></i><span>Theme</span></a>
+        <a href="#"><i class="fas fa-cogs"></i><span>Settings</span></a>
+        <a href="#"><i class="fas fa-trash"></i><span>Bin</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <a href="#"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fas fa-tasks"></i><span>Manage Website</span></a>
+        <a href="#"><i class="fas fa-newspaper"></i><span>Newsletter</span></a>
+        <a href="#"><i class="fas fa-users"></i><span>User Management</span></a>
+        <a href="#"><i class="far fa-newspaper"></i><span>Theme</span></a>
+        <a href="#"><i class="fas fa-cogs"></i><span>Settings</span></a>
+        <a href="#"><i class="fas fa-trash"></i><span>Bin</span></a>
+    </div>
+    <!--sidebar end-->
+
+    <div class="content">
+        <div class="welcome">
+            <h3>Welcome</h3>
+            <p>Welcome back to Back Office, David. Your last login was in</p>
+            <h6>Tue, Feb2, 2021, 4: 50PM</h6>
+        </div>
+
+        <div class="site_session">
+            <h6>Site Session</h6>
+            <h2>881</h2>
+            <h4>Today 10</h4>
+        </div>
+
+        <div class="live_preview">
+            <h4>Live preview</h4>
+        </div>
+
+        <div class="total_visits">
+            <h6>Total Visits</h6>
+            <h2>900</h2>
+            <h4>Today 15</h4>
+        </div>
+
+        <div class="bounce_rate">
+            <h6>Bounce Rate</h6>
+            <h2>900</h2>
+            <h4>Today 15</h4>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+    <script src="/signout_modal.js"></script>
+  </body>
+</html>
+      

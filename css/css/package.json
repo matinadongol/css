@@ -1,0 +1,14 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "description": "scss",
+  "main": "nav.js",
+  "scripts": {
+    "compile:sass" : "node-sass sass/contact.scss css/contact.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^6.0.0"
+  }
+}

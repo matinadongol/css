@@ -1,0 +1,587 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Armata", sans-serif;
+}
+
+body {
+  /* overflow: hidden; */
+  width: 100vw;
+}
+
+.maindiv {
+  display: grid;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr 100px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/*navbar*/
+.navsection {
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #26de81;
+}
+
+.logo {
+  width: 40%;
+  color: #fff;
+  text-shadow: 2px 2px 2px #fff;
+  padding-left: 120px;
+}
+
+.menu {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 25px;
+  position: relative;
+  font-weight: bold;
+}
+
+.menu a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s linear;
+}
+
+.menu a:hover:before {
+  width: 100%;
+}
+
+.menu a:after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: 0;
+  width: 0;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s linear;
+}
+
+.menu a:hover:after {
+  width: 100%;
+}
+
+/*wave*/
+.svgimg {
+  grid-column: 1/-1;
+  background: #26de81;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 100vw;
+}
+
+.svgimg h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  margin-top: -50px;
+  position: relative;
+}
+
+.svgimg h1:before {
+  content: "Matina.Dongol";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  color: rgb(47, 141, 165);
+  transition: all 2s linear;
+  overflow: hidden;
+}
+
+.svgimg h1:hover:before {
+  width: 100%;
+  text-shadow: 5px 5px 2px rgb(138, 138, 138);
+}
+
+.svgimg p {
+  font-size: 1.6rem;
+}
+
+.svgimg a {
+  text-decoration: none;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+}
+
+.svgimg a::after {
+  content: "";
+  font-family: "Font Awesome\ 5 Free";
+  width: calc(100vw - 80vw);
+  height: 25px;
+  font-size: 3rem;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 5px solid rgb(238, 238, 83);
+}
+
+.uppersvg {
+  background: #26de81;
+  grid-column: 1/-1;
+}
+
+/*login form*/
+.loginbox {
+  grid-row: 4/5;
+  grid-column: 1/2;
+  width: 400px;
+  padding-left: 30px;
+  margin-left: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+.loginbox h1 {
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 40px;
+}
+
+.loginbox .inputBox {
+  position: relative;
+}
+
+.loginbox .inputBox input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+}
+
+.loginbox .inputBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.loginbox .inputBox input:focus ~ label,
+.loginbox .inputBox input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+}
+
+.loginbox input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #03a9f4;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.loginbox .btn1 {
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 20px 35px;
+  float: right;
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.loginbox .btn1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgb(47, 141, 165);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  transition: all 2s;
+}
+
+.loginbox .btn1:hover:before {
+  transform: rotate(0deg);
+}
+
+.btn2div {
+  background-color: rgb(161, 156, 156);
+  width: 30%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-top: 30px;
+}
+.btn2 {
+  padding: 10px 30px;
+  color: #000;
+  border: 2px solid rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn2:before {
+  content: "Click";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transform: translateY(-100%);
+  transition: all 0.8s linear;
+}
+
+.btn2:hover:before {
+  transform: translateY(0);
+}
+
+.imgoverlay {
+  grid-row: 4/5;
+  grid-column: 2/3;
+  height: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+figure {
+  height: 530px;
+  overflow: hidden;
+  position: relative;
+}
+
+figcaption {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+.imgoverlay img {
+  height: 530px;
+  transition: all 0.5s linear;
+}
+
+figure:hover img {
+  transform: scale(1.3);
+}
+
+figure:hover figcaption {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*animated ball*/
+.ball {
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball ul {
+  display: flex;
+  border-bottom: 5px solid #26de81;
+}
+
+.ball ul li {
+  width: 50px;
+  height: 50px;
+  list-style: none;
+  margin: 0 10px;
+  border-radius: 50%;
+  animation: bouncy 1s linear infinite;
+}
+
+@keyframes bouncy {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.ball ul li:nth-child(1) {
+  animation-delay: 0.2s;
+  background-color: rgb(240, 232, 163);
+}
+
+.ball ul li:nth-child(2) {
+  animation-delay: 0.6s;
+  background-color: rgb(255, 177, 207);
+}
+
+.ball ul li:nth-child(3) {
+  animation-delay: 0.4s;
+  background-color: rgb(165, 213, 252);
+}
+
+.ball ul li:nth-child(4) {
+  animation-delay: 0.8s;
+  background-color: rgb(188, 248, 193);
+}
+
+.ball ul li:nth-child(5) {
+  animation-delay: 0.5s;
+  background-color: rgb(219, 219, 219);
+}
+
+/*caret*/
+.maincaret {
+  grid-column: 4/5;
+  grid-row: 4/5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#caret {
+  border-top: 50px solid black;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid transparent;
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+/* animated image hover  */
+.animatedhover {
+  grid-row: 5/6;
+  grid-column: 1/2;
+  width: 450px;
+  height: 500px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.animatedhover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: aquamarine;
+  opacity: 0.5; */
+}
+
+.animatedhover img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.animated_info {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.animated_info h2 {
+  text-align: center;
+  font-size: 17px;
+  padding: 20px;
+  margin-top: 20px;
+  background: #0a92b4;
+}
+
+.animated_info p {
+  font-size: 16px;
+  width: 80%;
+  text-transform: capitalize;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.animated_info a {
+  text-decoration: none;
+  background: #068db6;
+  color: #fff;
+  width: 100px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  align-self: center;
+}
+
+.animatedhover {
+  background-color: aliceblue;
+  border: 10px solid rgb(235, 165, 165);
+}
+
+.animatedhover:hover img {
+  transform: rotate(720deg) scale(0);
+  opacity: 0;
+}
+
+.animatedhover::before {
+  background-color: #27aec0;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.animatedhover:hover::before {
+  transition-delay: 0.5s;
+  opacity: 1;
+}
+.animated_info h2,
+.animated_info p,
+.animated_info a {
+  transform: translateY(-450px);
+  transition: all 0.3s;
+}
+
+.animatedhover:hover a {
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.animatedhover:hover p {
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+.animatedhover:hover h2 {
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+
+/*footer*/
+.footer {
+  grid-row: 6/7;
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: 1px 4px 2px 2px rgb(141, 140, 140);
+  line-height: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fa-twitter {
+  color: rgb(0, 128, 160);
+}
+
+.fa-instagram {
+  color: rgb(179, 76, 148);
+}
+
+.fa-facebook {
+  color: rgb(44, 138, 83);
+}
+
+.fa-youtube {
+  color: rgb(231, 57, 57);
+}
+
+.footer a i {
+  transition: all 0.3s linear;
+}
+
+.footer a:hover .fa {
+  transform: scale(1.4);
+  color: rgb(0, 0, 0);
+}
+
+.footer a:before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 100%;
+  left: -89%;
+  background-color: rgb(93, 174, 250);
+  transform: rotate(60deg);
+}
+
+.footer a:hover:before {
+  animation: socialicons 0.8s 1;
+  animation-fill-mode: forwards; /*keyframes 100% ko styling j cha tesmai adkine hover huda */
+}
+
+@keyframes socialicons {
+  0% {
+    top: 100%;
+    left: -89%;
+  }
+  50% {
+    top: -99%;
+    left: -50%;
+  }
+  100% {
+    top: -5%;
+    left: -50%;
+  }
+}

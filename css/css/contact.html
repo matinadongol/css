@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+    
+    <div class="maindiv">
+        <!-- imghoover firework  -->
+        <div class="imghover">
+            <div class="centerimghover">
+                <img src="https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80" alt="firework">
+                <div class="imgcaptions">
+                    <h1>Fireworks</h1>
+                </div>
+            </div>
+            <div class="btnhover">
+                <a href="index.html" >Home</a>
+            </div>
+        </div>
+
+        <!-- wave loader  -->
+        <div class="main_wave">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+
+        <!-- slider loading effect  -->
+        <div class="main_sliderloading">
+            <h1>~MATINA~</h1>
+        </div>
+
+        <!-- netflix  -->
+        <div class="main_netflix">
+            <div class="center_netflix" id="center_netflix"></div>
+        </div>
+
+        <!-- circle loader  -->
+        <div class="main_circleloader">
+            <div class="center_circleloader">
+                <div class="rotatediv"></div>
+                <h1>loading</h1>
+            </div>
+        </div>
+
+        <!-- git logo  -->
+        <div class="main_git">
+            <div class="center_git">
+                <div class="logo1"></div>
+                <div class="logo2"></div>
+            </div>
+        </div>
+
+        <!-- instagram logo  -->
+        <div class="main_insta">
+            <div class="instalogo">
+                <div class="squarelayer"></div>
+            </div>
+        </div>
+
+        <!-- react logo  -->
+        <div class="main_react">
+            <div class="reactlogo">
+                <div class="reactcircle"></div>
+            </div>
+        </div>
+
+        <!-- camera icon  -->
+        <div class="main_cameraicon">
+            <div class="camera_body">
+                <div class="camera_btn"></div>
+                <div class="camera_flash"></div>
+                <div class="camera_lens"></div>
+            </div>
+        </div>
+
+        <!-- cartoon  -->
+        <div class="center-cartoon">
+            <div class="face">
+                <div class="eyes">
+                    <div class="left_eyes"></div>
+                    <div class="right_eyes"></div>
+                </div>
+                <div class="nose"></div>
+            </div>
+        </div>
+
+        <!-- footer  -->
+        <footer class="main_footer">
+            <h3>this is a footer which is always in the bottom.</h3>
+            
+        </footer>
+    </div>
+
+    <script>
+        const center_netflix = document.getElementById('center_netflix');
+
+        fetch("https://jsonplaceholder.typicode.com/photos?_limit=20").then((apidata) => {
+           return(apidata.json());
+        })
+        .then((jsondata) => {
+            jsondata.map((val) => {
+                key = val.id;
+                let img = document.createElement("img");
+                img.src = `https://picsum.photos/200/350?random=${val.id}`;
+                center_netflix.appendChild(img);
+                console.log(val.url);
+            });
+        });
+    </script>
+</body>
+</html>

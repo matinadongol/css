@@ -1,0 +1,124 @@
+:root {
+  --clr-black: #000;
+  --clr-white: #fff;
+  --clr-gray: #777575;
+  --clr-navbg: rgb(66, 66, 66);
+  --clr-shadow: #eeece1;
+
+  /*   border radius */
+  --radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background-color: rgb(156, 87, 87);
+}
+
+.nav {
+  position: absolute;
+  background-color: var(--clr-navbg);
+  color: var(--clr-white);
+  box-shadow: 0px 0px 10px var(--clr-shadow);
+  height: 100vh;
+
+  &__expand {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--clr-navbg);
+    box-shadow: 0px 0px 10px var(--clr-shadow);
+    fill: var(--clr-black);
+    background-color: var(--clr-white);
+    border-radius: 50%;
+    position: absolute;
+    right: -1rem;
+    top: 1rem;
+    z-index: 99;
+    cursor: pointer;
+    transform: rotatez(-180deg);
+    transition: transform 200ms ease-in-out;
+
+    &:hover {
+      fill: var(--clr-black);
+      background-color: var(--clr-white);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &item {
+      list-style: none;
+      transition: all 200ms ease-in;
+      padding: 1rem 1.5rem;
+      border-left: 6px solid transparent;
+      cursor: pointer;
+
+      &:first-child {
+        background-color: var(--clr-black);
+        border: none;
+      }
+
+      &:hover {
+        background-color: var(--clr-black);
+      }
+
+      &:first-child:hover {
+        background-color: var(--clr-black);
+        border: none;
+      }
+
+      a {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        color: var(--clr-white);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      i {
+        fill: var(--clr-white);
+        width: 2rem;
+      }
+
+      svg {
+        fill: var(--clr-white);
+        width: 2rem;
+      }
+
+      &-active {
+        background-color: var(--clr-gray);
+        border-left: 6px solid var(--clr-white);
+
+        i,
+        svg,
+        p {
+          color: var(--clr-white);
+          fill: var(--clr-white);
+        }
+      }
+      &-active:hover {
+        background-color: var(--clr-gray);
+        border-left: 6px solid var(--clr-white);
+      }
+    }
+  }
+
+  //close state
+  &-closed &__expand {
+    transform: rotatez(0deg);
+  }
+
+  &-closed &__listitem p {
+    display: none;
+  }
+}
